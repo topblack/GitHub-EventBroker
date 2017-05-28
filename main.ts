@@ -8,7 +8,8 @@ class EventBroker {
             res.send('hello world');
             console.log('hello world');
         });
-        app.post('/', function(req, res) {
+	
+	app.post('/events', function(req, res) {
             res.sendStatus(201);
         });
         app.listen('8081');
