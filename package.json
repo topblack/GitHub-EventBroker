@@ -1,0 +1,27 @@
+{
+  "name": "github-eventbroker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/topblack/GitHub-EventBroker.git"
+  },
+  "author": "Leon Qin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/topblack/GitHub-EventBroker/issues"
+  },
+  "homepage": "https://github.com/topblack/GitHub-EventBroker#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.22",
+    "require": "^2.4.20",
+    "tslint": "^5.3.2"
+  }
+}
