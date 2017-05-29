@@ -25,7 +25,7 @@ class EventBroker {
             let sortedEventFileNames = eventFileNames.sort(function (a, b) {
                 let statA = fs.statSync(path.join(consumerFolder, a));
                 let statB = fs.statSync(path.join(consumerFolder, b));
-                return statA.mtime.getTime() < statB.mtime.getTime();
+                return statA.mtime.getTime() > statB.mtime.getTime();
             });
             res.send(JSON.stringify(sortedEventFileNames));
         });
