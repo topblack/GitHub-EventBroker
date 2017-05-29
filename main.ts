@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const bodyParser = require('body-parser');
 
 const CONSUMERS_DIR = 'consumers';
 class EventBroker {
@@ -9,6 +10,8 @@ class EventBroker {
             fs.mkdirSync(CONSUMERS_DIR);
         }
         let app = express();
+        app.use(bodyParser.json());
+        
         app.get('/', function (req, res) {
             res.send('hello world');
             console.log('hello world');
