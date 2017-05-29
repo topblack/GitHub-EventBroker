@@ -52,6 +52,16 @@ class EventBroker {
             res.sendStatus(200);
         });
 
+        app.get('/consumers/:consumerId/events/:eventId', function (req, res) {
+            let targetPath = path.join(CONSUMERS_DIR, req.params.consumerId, req.params.eventId);
+            if (fs.existsSync(targetPath)) {
+                res.send(fs.readFileSync(targetPath, 'utf-8'));
+            } else {
+                res.sendStatus(404);
+            }
+        });
+
+        console.info('Listening 8081');
         app.listen('8081');
 
         return 0;
