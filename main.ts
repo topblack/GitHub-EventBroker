@@ -42,7 +42,7 @@ class EventBroker {
                 console.info('Consumer ' + req.params.consumerId + ' added.');
             }
 
-            fs.writeFileSync(path.join(targetPath, evtId), JSON.stringify(req.body));
+            fs.writeFileSync(path.join(targetPath, evtType + '_' + evtId), JSON.stringify(req.body));
             console.log(evtType + ' to ' + req.params.consumerId);
             res.sendStatus(200);
         });
