@@ -66,6 +66,7 @@ class EventBroker {
 
         console.info('Listening 8081');
         app.listen('8081');
+        console.info('End');
 
         return 0;
     }
