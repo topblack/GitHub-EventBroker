@@ -23,8 +23,8 @@ class EventBroker {
             let consumerFolder = path.join(CONSUMERS_DIR, req.params.consumerId);
             let eventFileNames = fs.readdirSync(consumerFolder);
             let sortedEventFileNames = eventFileNames.sort(function (a, b) {
-                let statA = fs.statSync(a);
-                let statB = fs.statSync(b);
+                let statA = fs.statSync(path.join(consumerFolder, a));
+                let statB = fs.statSync(path.join(consumerFolder, b));
                 return statA.mtime.getTime() < statB.mtime.getTime();
             });
             res.send(JSON.stringify(sortedEventFileNames));
