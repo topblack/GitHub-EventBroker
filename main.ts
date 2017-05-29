@@ -6,7 +6,7 @@ const CONSUMERS_DIR = 'consumers';
 class EventBroker {
     public static main(): number {
         if (!fs.existsSync(CONSUMERS_DIR)) {
-            fs.mkdirSync('');
+            fs.mkdirSync(CONSUMERS_DIR);
         }
         let app = express();
         app.get('/', function (req, res) {
