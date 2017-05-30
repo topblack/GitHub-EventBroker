@@ -19,7 +19,7 @@ class EventBroker {
 
         app.get('/consumers', function (req, res) {
             let consumerFolders = fs.readdirSync(CONSUMERS_DIR);
-            res.send(JSON.stringify(consumerFolders));
+            res.send(consumerFolders);
         });
 
         app.get('/consumers/:consumerId/events', function (req, res) {
@@ -30,7 +30,7 @@ class EventBroker {
                 let statB = fs.statSync(path.join(consumerFolder, b));
                 return statA.mtime.getTime() > statB.mtime.getTime();
             });
-            res.send(JSON.stringify(sortedEventFileNames));
+            res.send(sortedEventFileNames);
         });
 
         app.post('/consumers/:consumerId/events', function (req, res) {
